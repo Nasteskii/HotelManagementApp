@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace HotelManagementApp
 {
+    [Serializable]
     public class Hotel
     {
         private string Name { get; set; }
@@ -15,7 +16,7 @@ namespace HotelManagementApp
 
         private List<Room> Rooms;
 
-        public Hotel(string name, string location, int stars) {
+        public Hotel(string name, string location, byte stars) {
             Name = name;
             Location = location;
             Stars = (StarsNumber)stars;

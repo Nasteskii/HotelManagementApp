@@ -23,7 +23,13 @@ namespace HotelManagementApp
             reservations = new List<Reservation>();
             try
             {
-                using (FileStream fileStream = new FileStream(Path.Combine("..", "Data", "admin"), FileMode.Open))
+                using (FileStream fileStream = new FileStream(Path.Combine("..", "..", "Data", "hotel.bin"), FileMode.Open))
+                {
+                    IFormatter formater = new BinaryFormatter();
+                    hotel = (Hotel)formater.Deserialize(fileStream);
+                }
+
+                using (FileStream fileStream = new FileStream(Path.Combine("..", "..", "Data", "admin.bin"), FileMode.Open))
                 {
                     IFormatter formater = new BinaryFormatter();
                     admin = (Admin)formater.Deserialize(fileStream);
@@ -39,7 +45,7 @@ namespace HotelManagementApp
         {
             admin = new Admin(email, firstName, lastName, password);
 
-            FileStream fileStream = new FileStream(Path.Combine("..", "admin"), FileMode.Create);
+            FileStream fileStream = new FileStream(Path.Combine("..", "..", "Data", "admin.bin"), FileMode.Create);
             IFormatter formatter = new BinaryFormatter();
             formatter.Serialize(fileStream, admin);
         }
@@ -62,15 +68,35 @@ namespace HotelManagementApp
             admin.setAuthenticatedStatus(false);
         }
 
-        public void NewHotel(string hotelName, string hotelLocation, int hotelStars)
+        public void NewHotel(string hotelName, string hotelLocation, byte hotelStars)
         {
             hotel = new Hotel(hotelName, hotelLocation, hotelStars);
+
+            FileStream fileStream = new FileStream(Path.Combine("..", "..", "Data", "hotel.bin"), FileMode.Create);
+            IFormatter formatter = new BinaryFormatter();
+            formatter.Serialize(fileStream, hotel);
+        }
+
+        public void MakeReservation()
+        {
+
         }
 
         public void Draw(Point hotelNameLabelLocation, Graphics g)
         {
-            HotelNameLabel = new TransparentLabel(hotelNameLabelLocation, hotel.GetName());
-            HotelNameLabel.Draw(g);
+           // HotelNameLabel = new TransparentLabel(hotelNameLabelLocation, hotel.GetName());
+           // HotelNameLabel.Draw(g);
         }
+
+        public Hotel GetHotel()
+        {
+            return hotel;
+        }
+
+        public bool HasHotel()
+        {
+            return hotel != null;
+        }
+
     }
 }

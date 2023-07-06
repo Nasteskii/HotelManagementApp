@@ -9,3 +9,9 @@ D:\OneDrive - UKIM, FINKI\Fakultet\6 Semestar\Vizuelno programiranje\Proekt\Hote
 D:\OneDrive - UKIM, FINKI\Fakultet\6 Semestar\Vizuelno programiranje\Proekt\HotelManagementApp\HotelManagementApp\obj\Debug\HotelManagementApp.csproj.CoreCompileInputs.cache
 D:\OneDrive - UKIM, FINKI\Fakultet\6 Semestar\Vizuelno programiranje\Proekt\HotelManagementApp\HotelManagementApp\obj\Debug\HotelManagementApp.exe
 D:\OneDrive - UKIM, FINKI\Fakultet\6 Semestar\Vizuelno programiranje\Proekt\HotelManagementApp\HotelManagementApp\obj\Debug\HotelManagementApp.pdb
+D:\OneDrive - UKIM, FINKI\Fakultet\6 Semestar\Vizuelno programiranje\Proekt\HotelManagementApp\HotelManagementApp\bin\Debug\BCrypt.Net.dll
+D:\OneDrive - UKIM, FINKI\Fakultet\6 Semestar\Vizuelno programiranje\Proekt\HotelManagementApp\HotelManagementApp\bin\Debug\BCrypt.Net.xml
+D:\OneDrive - UKIM, FINKI\Fakultet\6 Semestar\Vizuelno programiranje\Proekt\HotelManagementApp\HotelManagementApp\obj\Debug\HotelManagementApp.csproj.CopyComplete
+D:\OneDrive - UKIM, FINKI\Fakultet\6 Semestar\Vizuelno programiranje\Proekt\HotelManagementApp\HotelManagementApp\obj\Debug\HotelManagementApp.fLogIn.resources
+D:\OneDrive - UKIM, FINKI\Fakultet\6 Semestar\Vizuelno programiranje\Proekt\HotelManagementApp\HotelManagementApp\obj\Debug\HotelManagementApp.fNewHotel.resources
+D:\OneDrive - UKIM, FINKI\Fakultet\6 Semestar\Vizuelno programiranje\Proekt\HotelManagementApp\HotelManagementApp\obj\Debug\HotelManagementApp.fRegister.resources

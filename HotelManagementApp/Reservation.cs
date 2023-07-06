@@ -6,14 +6,7 @@ using System.Threading.Tasks;
 
 namespace HotelManagementApp
 {
-    [Serializable]
-    public class Guest
+    public class Reservation
     {
-        public int Age { get; set; }
-
-        public Guest(int age)
-        {
-            Age = age;
-        }
     }
 }
