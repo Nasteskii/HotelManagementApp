@@ -15,16 +15,18 @@ namespace HotelManagementApp
 
         private List<Room> Rooms;
 
-        public Hotel(string name, string location, StarsNumber stars) {
+        public Hotel(string name, string location, int stars) {
             Name = name;
             Location = location;
-            Stars = stars;
+            Stars = (StarsNumber)stars;
             Rooms = new List<Room>();
         }
 
-        public void addRoom(Room room)
+        public void AddRoom(Room room)
         {
             Rooms.Add(room);
         }
+
+        public string GetName() { return Name; }
     }
 }

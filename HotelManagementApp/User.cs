@@ -9,12 +9,15 @@ namespace HotelManagementApp
     public class User
     {
         private string Email { get; set; }
-        private List<Guest> Guests;
 
-        public User(string email, List<Guest> guests)
+        private string FirstName { get; set; }
+        private string LastName { get; set; }
+
+        public User(string email, string firstName, string lastName) 
         {
             Email = email;
-            Guests = guests;
+            FirstName = firstName;
+            LastName = lastName;
         }
     }
 }
