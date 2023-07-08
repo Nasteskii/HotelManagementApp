@@ -20,5 +20,10 @@ namespace HotelManagementApp
             FirstName = firstName;
             LastName = lastName;
         }
+
+        public string GetEmail()
+        {
+            return Email;
+        }
     }
 }

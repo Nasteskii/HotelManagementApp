@@ -21,7 +21,14 @@ namespace HotelManagementApp
             InitializeComponent();
             this.BackgroundImageLayout = ImageLayout.Stretch;
             DoubleBuffered = true;
-            cbHotelStars.DataSource = Enum.GetValues(typeof(StarsNumber)); 
+            cbHotelStars.DataSource = Enum.GetValues(typeof(StarsNumber));
+        }
+
+        public void LoadFields()
+        {
+            tbHotelName.Text = HotelName;
+            tbHotelLocation.Text = HotelLocation;
+            cbHotelStars.SelectedItem = HotelStars;
         }
 
         private void btnSubmitHotel_Click(object sender, EventArgs e)

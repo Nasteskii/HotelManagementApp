@@ -17,10 +17,8 @@ namespace HotelManagementApp
         private Admin admin;
         private Hotel hotel;
         private List<Reservation> reservations;
-        private TransparentLabel HotelNameLabel;
         public Scene() 
         {
-            reservations = new List<Reservation>();
             try
             {
                 using (FileStream fileStream = new FileStream(Path.Combine("..", "..", "Data", "hotel.bin"), FileMode.Open))
@@ -28,7 +26,13 @@ namespace HotelManagementApp
                     IFormatter formater = new BinaryFormatter();
                     hotel = (Hotel)formater.Deserialize(fileStream);
                 }
+            }
+            catch
+            {
 
+            }
+            try
+            {
                 using (FileStream fileStream = new FileStream(Path.Combine("..", "..", "Data", "admin.bin"), FileMode.Open))
                 {
                     IFormatter formater = new BinaryFormatter();
@@ -39,22 +43,36 @@ namespace HotelManagementApp
             {
 
             }
+            try
+            {
+                using (FileStream fileStream = new FileStream(Path.Combine("..", "..", "Data", "reservations.bin"), FileMode.Open))
+                {
+                    IFormatter formater = new BinaryFormatter();
+                    reservations = (List<Reservation>)formater.Deserialize(fileStream);
+                }
+            }
+            catch
+            {
+
+            }
         }
 
-        public void Register(string email, string firstName, string lastName, string password)
+        public void Register(string firstName, string lastName, string email, string password)
         {
-            admin = new Admin(email, firstName, lastName, password);
+            admin = new Admin(firstName, lastName, email, password);
 
-            FileStream fileStream = new FileStream(Path.Combine("..", "..", "Data", "admin.bin"), FileMode.Create);
-            IFormatter formatter = new BinaryFormatter();
-            formatter.Serialize(fileStream, admin);
+            using (FileStream fileStream = new FileStream(Path.Combine("..", "..", "Data", "admin.bin"), FileMode.Create))
+            {
+                IFormatter formatter = new BinaryFormatter();
+                formatter.Serialize(fileStream, admin);
+            }
         }
 
         public bool LogIn(string email, string password)
         {
-            if (admin != null)
+            if (HasAdmin())
             {
-                if (admin.CheckPassword(password))
+                if (admin.CheckCredentials(email, password))
                 {
                     admin.setAuthenticatedStatus(true);
                 }
@@ -70,27 +88,40 @@ namespace HotelManagementApp
 
         public void NewHotel(string hotelName, string hotelLocation, byte hotelStars)
         {
+            List<Room> rooms = hotel.GetRooms();
             hotel = new Hotel(hotelName, hotelLocation, hotelStars);
+            hotel.AddRooms(rooms);
 
-            FileStream fileStream = new FileStream(Path.Combine("..", "..", "Data", "hotel.bin"), FileMode.Create);
-            IFormatter formatter = new BinaryFormatter();
-            formatter.Serialize(fileStream, hotel);
+            using (FileStream fileStream = new FileStream(Path.Combine("..", "..", "Data", "hotel.bin"), FileMode.Create))
+            {
+                IFormatter formatter = new BinaryFormatter();
+                formatter.Serialize(fileStream, hotel);
+            }
         }
 
-        public void MakeReservation()
+        public void MakeReservation(User user, int roomNumber, List<Guest> guests, DateTime checkInDate, DateTime checkOutDate)
         {
+            reservations.Add(new Reservation(user, roomNumber, guests, checkInDate, checkOutDate));
+            using (FileStream fileStream = new FileStream(Path.Combine("..", "..", "Data", "reservations.bin"), FileMode.Create))
+            {
+                IFormatter formatter = new BinaryFormatter();
+                formatter.Serialize(fileStream, reservations);
+            }
+        }
 
+        public void RemoveReservation(Reservation reservation)
+        {
+            reservations.Remove(reservation);
+            using (FileStream fileStream = new FileStream(Path.Combine("..", "..", "Data", "reservations.bin"), FileMode.Create))
+            {
+                IFormatter formatter = new BinaryFormatter();
+                formatter.Serialize(fileStream, reservations);
+            }
         }
 
         public void Draw(Point hotelNameLabelLocation, Graphics g)
         {
-           // HotelNameLabel = new TransparentLabel(hotelNameLabelLocation, hotel.GetName());
-           // HotelNameLabel.Draw(g);
-        }
-
-        public Hotel GetHotel()
-        {
-            return hotel;
+           
         }
 
         public bool HasHotel()
@@ -98,5 +129,24 @@ namespace HotelManagementApp
             return hotel != null;
         }
 
+        public Hotel GetHotel()
+        {
+            return hotel;
+        }
+
+        public bool HasAdmin()
+        {
+            return admin != null;
+        }
+
+        public Admin GetAdmin()
+        {
+            return admin;
+        }
+
+        public List<Reservation> GetReservations()
+        {
+            return reservations;
+        }
     }
 }

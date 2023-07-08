@@ -15,3 +15,7 @@ D:\OneDrive - UKIM, FINKI\Fakultet\6 Semestar\Vizuelno programiranje\Proekt\Hote
 D:\OneDrive - UKIM, FINKI\Fakultet\6 Semestar\Vizuelno programiranje\Proekt\HotelManagementApp\HotelManagementApp\obj\Debug\HotelManagementApp.fLogIn.resources
 D:\OneDrive - UKIM, FINKI\Fakultet\6 Semestar\Vizuelno programiranje\Proekt\HotelManagementApp\HotelManagementApp\obj\Debug\HotelManagementApp.fNewHotel.resources
 D:\OneDrive - UKIM, FINKI\Fakultet\6 Semestar\Vizuelno programiranje\Proekt\HotelManagementApp\HotelManagementApp\obj\Debug\HotelManagementApp.fRegister.resources
+D:\OneDrive - UKIM, FINKI\Fakultet\6 Semestar\Vizuelno programiranje\Proekt\HotelManagementApp\HotelManagementApp\obj\Debug\HotelManagementApp.fSearchRooms.resources
+D:\OneDrive - UKIM, FINKI\Fakultet\6 Semestar\Vizuelno programiranje\Proekt\HotelManagementApp\HotelManagementApp\obj\Debug\HotelManagementApp.fManageRooms.resources
+D:\OneDrive - UKIM, FINKI\Fakultet\6 Semestar\Vizuelno programiranje\Proekt\HotelManagementApp\HotelManagementApp\obj\Debug\HotelManagementApp.fAddRoom.resources
+D:\OneDrive - UKIM, FINKI\Fakultet\6 Semestar\Vizuelno programiranje\Proekt\HotelManagementApp\HotelManagementApp\obj\Debug\HotelManagementApp.fReservations.resources

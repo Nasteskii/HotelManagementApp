@@ -22,14 +22,12 @@ namespace HotelManagementApp
             DoubleBuffered = true;
         }
 
-        private void btnSubmitHotel_Click(object sender, EventArgs e)
+        private void btnLogIn_Click(object sender, EventArgs e)
         {
             Email = tbEmail.Text;
             Password = tbPassword.Text;
             DialogResult = DialogResult.OK;
             Close();
         }
-
-       
     }
 }

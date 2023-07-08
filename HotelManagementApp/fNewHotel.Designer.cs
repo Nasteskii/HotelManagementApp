@@ -29,82 +29,109 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fNewHotel));
-            this.pbHotelLocation = new System.Windows.Forms.PictureBox();
-            this.pbHotelName = new System.Windows.Forms.PictureBox();
+            this.gbNewHotel = new System.Windows.Forms.GroupBox();
+            this.btnSubmitHotel = new System.Windows.Forms.Button();
+            this.cbHotelStars = new System.Windows.Forms.ComboBox();
             this.tbHotelLocation = new System.Windows.Forms.TextBox();
             this.tbHotelName = new System.Windows.Forms.TextBox();
-            this.cbHotelStars = new System.Windows.Forms.ComboBox();
-            this.pbHotelStars = new System.Windows.Forms.PictureBox();
-            this.btnSubmitHotel = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHotelLocation)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHotelName)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHotelStars)).BeginInit();
+            this.lHotelLocation = new System.Windows.Forms.Label();
+            this.lHotelName = new System.Windows.Forms.Label();
+            this.lStars = new System.Windows.Forms.Label();
+            this.gbNewHotel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pbHotelLocation
+            // gbNewHotel
             // 
-            this.pbHotelLocation.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pbHotelLocation.Location = new System.Drawing.Point(255, 332);
-            this.pbHotelLocation.Name = "pbHotelLocation";
-            this.pbHotelLocation.Size = new System.Drawing.Size(125, 22);
-            this.pbHotelLocation.TabIndex = 19;
-            this.pbHotelLocation.TabStop = false;
+            this.gbNewHotel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.gbNewHotel.BackColor = System.Drawing.Color.Lavender;
+            this.gbNewHotel.Controls.Add(this.btnSubmitHotel);
+            this.gbNewHotel.Controls.Add(this.cbHotelStars);
+            this.gbNewHotel.Controls.Add(this.tbHotelLocation);
+            this.gbNewHotel.Controls.Add(this.tbHotelName);
+            this.gbNewHotel.Controls.Add(this.lHotelLocation);
+            this.gbNewHotel.Controls.Add(this.lHotelName);
+            this.gbNewHotel.Controls.Add(this.lStars);
+            this.gbNewHotel.Location = new System.Drawing.Point(255, 194);
+            this.gbNewHotel.Name = "gbNewHotel";
+            this.gbNewHotel.Size = new System.Drawing.Size(419, 252);
+            this.gbNewHotel.TabIndex = 28;
+            this.gbNewHotel.TabStop = false;
+            this.gbNewHotel.Text = "New Hotel";
             // 
-            // pbHotelName
+            // btnSubmitHotel
             // 
-            this.pbHotelName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pbHotelName.Location = new System.Drawing.Point(255, 293);
-            this.pbHotelName.Name = "pbHotelName";
-            this.pbHotelName.Size = new System.Drawing.Size(125, 22);
-            this.pbHotelName.TabIndex = 18;
-            this.pbHotelName.TabStop = false;
-            // 
-            // tbHotelLocation
-            // 
-            this.tbHotelLocation.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbHotelLocation.Location = new System.Drawing.Point(405, 332);
-            this.tbHotelLocation.Name = "tbHotelLocation";
-            this.tbHotelLocation.Size = new System.Drawing.Size(211, 22);
-            this.tbHotelLocation.TabIndex = 17;
-            // 
-            // tbHotelName
-            // 
-            this.tbHotelName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbHotelName.Location = new System.Drawing.Point(405, 293);
-            this.tbHotelName.Name = "tbHotelName";
-            this.tbHotelName.Size = new System.Drawing.Size(211, 22);
-            this.tbHotelName.TabIndex = 16;
+            this.btnSubmitHotel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSubmitHotel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSubmitHotel.Location = new System.Drawing.Point(41, 182);
+            this.btnSubmitHotel.Name = "btnSubmitHotel";
+            this.btnSubmitHotel.Size = new System.Drawing.Size(342, 38);
+            this.btnSubmitHotel.TabIndex = 3;
+            this.btnSubmitHotel.Text = "Save";
+            this.btnSubmitHotel.UseVisualStyleBackColor = true;
+            this.btnSubmitHotel.Click += new System.EventHandler(this.btnSubmitHotel_Click);
             // 
             // cbHotelStars
             // 
             this.cbHotelStars.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cbHotelStars.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbHotelStars.FormattingEnabled = true;
-            this.cbHotelStars.Location = new System.Drawing.Point(405, 373);
+            this.cbHotelStars.ItemHeight = 16;
+            this.cbHotelStars.Location = new System.Drawing.Point(172, 125);
             this.cbHotelStars.Name = "cbHotelStars";
             this.cbHotelStars.Size = new System.Drawing.Size(115, 24);
-            this.cbHotelStars.TabIndex = 20;
+            this.cbHotelStars.TabIndex = 2;
             // 
-            // pbHotelStars
+            // tbHotelLocation
             // 
-            this.pbHotelStars.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pbHotelStars.Location = new System.Drawing.Point(255, 375);
-            this.pbHotelStars.Name = "pbHotelStars";
-            this.pbHotelStars.Size = new System.Drawing.Size(125, 22);
-            this.pbHotelStars.TabIndex = 21;
-            this.pbHotelStars.TabStop = false;
+            this.tbHotelLocation.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbHotelLocation.Location = new System.Drawing.Point(172, 84);
+            this.tbHotelLocation.Name = "tbHotelLocation";
+            this.tbHotelLocation.Size = new System.Drawing.Size(211, 22);
+            this.tbHotelLocation.TabIndex = 1;
             // 
-            // btnSubmitHotel
+            // tbHotelName
             // 
-            this.btnSubmitHotel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnSubmitHotel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSubmitHotel.Location = new System.Drawing.Point(255, 415);
-            this.btnSubmitHotel.Name = "btnSubmitHotel";
-            this.btnSubmitHotel.Size = new System.Drawing.Size(361, 38);
-            this.btnSubmitHotel.TabIndex = 22;
-            this.btnSubmitHotel.Text = "Submit";
-            this.btnSubmitHotel.UseVisualStyleBackColor = true;
-            this.btnSubmitHotel.Click += new System.EventHandler(this.btnSubmitHotel_Click);
+            this.tbHotelName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbHotelName.Location = new System.Drawing.Point(172, 45);
+            this.tbHotelName.Name = "tbHotelName";
+            this.tbHotelName.Size = new System.Drawing.Size(211, 22);
+            this.tbHotelName.TabIndex = 0;
+            // 
+            // lHotelLocation
+            // 
+            this.lHotelLocation.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lHotelLocation.AutoSize = true;
+            this.lHotelLocation.BackColor = System.Drawing.Color.Transparent;
+            this.lHotelLocation.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lHotelLocation.Location = new System.Drawing.Point(37, 84);
+            this.lHotelLocation.Name = "lHotelLocation";
+            this.lHotelLocation.Size = new System.Drawing.Size(84, 23);
+            this.lHotelLocation.TabIndex = 29;
+            this.lHotelLocation.Text = "Location";
+            // 
+            // lHotelName
+            // 
+            this.lHotelName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lHotelName.AutoSize = true;
+            this.lHotelName.BackColor = System.Drawing.Color.Transparent;
+            this.lHotelName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lHotelName.Location = new System.Drawing.Point(37, 45);
+            this.lHotelName.Name = "lHotelName";
+            this.lHotelName.Size = new System.Drawing.Size(61, 23);
+            this.lHotelName.TabIndex = 27;
+            this.lHotelName.Text = "Name";
+            // 
+            // lStars
+            // 
+            this.lStars.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lStars.AutoSize = true;
+            this.lStars.BackColor = System.Drawing.Color.Transparent;
+            this.lStars.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lStars.Location = new System.Drawing.Point(37, 125);
+            this.lStars.Name = "lStars";
+            this.lStars.Size = new System.Drawing.Size(57, 23);
+            this.lStars.TabIndex = 24;
+            this.lStars.Text = "Stars";
             // 
             // fNewHotel
             // 
@@ -112,31 +139,24 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(871, 646);
-            this.Controls.Add(this.btnSubmitHotel);
-            this.Controls.Add(this.pbHotelStars);
-            this.Controls.Add(this.cbHotelStars);
-            this.Controls.Add(this.pbHotelLocation);
-            this.Controls.Add(this.pbHotelName);
-            this.Controls.Add(this.tbHotelLocation);
-            this.Controls.Add(this.tbHotelName);
+            this.Controls.Add(this.gbNewHotel);
             this.Name = "fNewHotel";
             this.Text = "fNewHotel";
-            ((System.ComponentModel.ISupportInitialize)(this.pbHotelLocation)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHotelName)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHotelStars)).EndInit();
+            this.gbNewHotel.ResumeLayout(false);
+            this.gbNewHotel.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pbHotelLocation;
-        private System.Windows.Forms.PictureBox pbHotelName;
+        private System.Windows.Forms.GroupBox gbNewHotel;
+        private System.Windows.Forms.Button btnSubmitHotel;
+        private System.Windows.Forms.ComboBox cbHotelStars;
         private System.Windows.Forms.TextBox tbHotelLocation;
         private System.Windows.Forms.TextBox tbHotelName;
-        private System.Windows.Forms.ComboBox cbHotelStars;
-        private System.Windows.Forms.PictureBox pbHotelStars;
-        private System.Windows.Forms.Button btnSubmitHotel;
+        private System.Windows.Forms.Label lHotelLocation;
+        private System.Windows.Forms.Label lHotelName;
+        private System.Windows.Forms.Label lStars;
     }
 }

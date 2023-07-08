@@ -28,6 +28,25 @@ namespace HotelManagementApp
             Rooms.Add(room);
         }
 
+        public void AddRooms(List<Room> rooms)
+        {
+            this.Rooms = rooms;
+        }
+
+        public void RemoveRoom(Room room) 
+        {
+            this.Rooms.Remove(room);
+        }
+
+        public List<Room> GetRooms()
+        {
+            return Rooms;
+        }
+
         public string GetName() { return Name; }
+        
+        public string GetLocation() { return Location; }
+
+        public StarsNumber GetStars() { return Stars;  }
     }
 }

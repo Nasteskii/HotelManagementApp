@@ -51,11 +51,23 @@
   <ItemGroup>
     <Compile Include="Admin.cs" />
     <Compile Include="BedTypes.cs" />
+    <Compile Include="fAddRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fAddRoom.Designer.cs">
+      <DependentUpon>fAddRoom.cs</DependentUpon>
+    </Compile>
     <Compile Include="fLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="fLogin.Designer.cs">
       <DependentUpon>fLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fManageRooms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fManageRooms.Designer.cs">
+      <DependentUpon>fManageRooms.cs</DependentUpon>
     </Compile>
     <Compile Include="fNewHotel.cs">
       <SubType>Form</SubType>
@@ -75,6 +87,18 @@
     <Compile Include="fRegister.Designer.cs">
       <DependentUpon>fRegister.cs</DependentUpon>
     </Compile>
+    <Compile Include="fReservations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fReservations.Designer.cs">
+      <DependentUpon>fReservations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fSearchRooms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fSearchRooms.Designer.cs">
+      <DependentUpon>fSearchRooms.cs</DependentUpon>
+    </Compile>
     <Compile Include="Guest.cs" />
     <Compile Include="Hotel.cs" />
     <Compile Include="Program.cs" />
@@ -83,10 +107,15 @@
     <Compile Include="Room.cs" />
     <Compile Include="Scene.cs" />
     <Compile Include="StarsNumber.cs" />
-    <Compile Include="TransparentLabel.cs" />
     <Compile Include="User.cs" />
+    <EmbeddedResource Include="fAddRoom.resx">
+      <DependentUpon>fAddRoom.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fLogin.resx">
       <DependentUpon>fLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fManageRooms.resx">
+      <DependentUpon>fManageRooms.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fNewHotel.resx">
       <DependentUpon>fNewHotel.cs</DependentUpon>
@@ -96,6 +125,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fRegister.resx">
       <DependentUpon>fRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fReservations.resx">
+      <DependentUpon>fReservations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fSearchRooms.resx">
+      <DependentUpon>fSearchRooms.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

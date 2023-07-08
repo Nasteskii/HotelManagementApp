@@ -24,7 +24,7 @@ namespace HotelManagementApp
             DoubleBuffered = true;
         }
 
-        private void btnSubmitHotel_Click(object sender, EventArgs e)
+        private void btnRegister_Click(object sender, EventArgs e)
         {
             FirstName = tbFirstName.Text;
             LastName = tbLastName.Text;

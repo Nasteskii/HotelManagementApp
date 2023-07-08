@@ -14,7 +14,7 @@ namespace HotelManagementApp
         private string HashedPassword { get; set; }
         private bool Authenticated { get; set; } = false;
 
-        public Admin(string email, string firstName, string lastName, string password) : base(email, firstName, lastName)
+        public Admin(string firstName, string lastName, string email, string password) : base(email, firstName, lastName)
         {
             HashedPassword = BCryptNet.HashPassword(password);
         }
@@ -29,9 +29,9 @@ namespace HotelManagementApp
             return Authenticated;
         }
 
-        internal bool CheckPassword(string password)
+        internal bool CheckCredentials(string email, string password)
         {
-            return BCryptNet.Verify(password, HashedPassword);
+            return email == base.GetEmail() && BCryptNet.Verify(password, HashedPassword);
         }
     }
 }

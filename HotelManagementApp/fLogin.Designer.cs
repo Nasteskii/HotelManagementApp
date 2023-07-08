@@ -29,60 +29,84 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fLogIn));
-            this.pbPassword = new System.Windows.Forms.PictureBox();
-            this.pbEmail = new System.Windows.Forms.PictureBox();
             this.tbPassword = new System.Windows.Forms.TextBox();
             this.tbEmail = new System.Windows.Forms.TextBox();
-            this.btnSubmitHotel = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPassword)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbEmail)).BeginInit();
+            this.btnLogIn = new System.Windows.Forms.Button();
+            this.lEmail = new System.Windows.Forms.Label();
+            this.lPassword = new System.Windows.Forms.Label();
+            this.gbLogIn = new System.Windows.Forms.GroupBox();
+            this.gbLogIn.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // pbPassword
-            // 
-            this.pbPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pbPassword.Location = new System.Drawing.Point(282, 326);
-            this.pbPassword.Name = "pbPassword";
-            this.pbPassword.Size = new System.Drawing.Size(125, 22);
-            this.pbPassword.TabIndex = 19;
-            this.pbPassword.TabStop = false;
-            // 
-            // pbEmail
-            // 
-            this.pbEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pbEmail.Location = new System.Drawing.Point(282, 287);
-            this.pbEmail.Name = "pbEmail";
-            this.pbEmail.Size = new System.Drawing.Size(125, 22);
-            this.pbEmail.TabIndex = 18;
-            this.pbEmail.TabStop = false;
             // 
             // tbPassword
             // 
             this.tbPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbPassword.Location = new System.Drawing.Point(432, 326);
+            this.tbPassword.Location = new System.Drawing.Point(137, 73);
             this.tbPassword.Name = "tbPassword";
-            this.tbPassword.Size = new System.Drawing.Size(211, 22);
-            this.tbPassword.TabIndex = 17;
+            this.tbPassword.PasswordChar = '*';
+            this.tbPassword.Size = new System.Drawing.Size(214, 22);
+            this.tbPassword.TabIndex = 1;
             // 
             // tbEmail
             // 
             this.tbEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbEmail.Location = new System.Drawing.Point(432, 287);
+            this.tbEmail.Location = new System.Drawing.Point(137, 35);
             this.tbEmail.Name = "tbEmail";
-            this.tbEmail.Size = new System.Drawing.Size(211, 22);
-            this.tbEmail.TabIndex = 16;
+            this.tbEmail.Size = new System.Drawing.Size(214, 22);
+            this.tbEmail.TabIndex = 0;
             // 
-            // btnSubmitHotel
+            // btnLogIn
             // 
-            this.btnSubmitHotel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnSubmitHotel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSubmitHotel.Location = new System.Drawing.Point(282, 370);
-            this.btnSubmitHotel.Name = "btnSubmitHotel";
-            this.btnSubmitHotel.Size = new System.Drawing.Size(361, 38);
-            this.btnSubmitHotel.TabIndex = 23;
-            this.btnSubmitHotel.Text = "Submit";
-            this.btnSubmitHotel.UseVisualStyleBackColor = true;
-            this.btnSubmitHotel.Click += new System.EventHandler(this.btnSubmitHotel_Click);
+            this.btnLogIn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnLogIn.BackColor = System.Drawing.SystemColors.Window;
+            this.btnLogIn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnLogIn.Location = new System.Drawing.Point(31, 127);
+            this.btnLogIn.Name = "btnLogIn";
+            this.btnLogIn.Size = new System.Drawing.Size(320, 30);
+            this.btnLogIn.TabIndex = 2;
+            this.btnLogIn.Text = "Log In";
+            this.btnLogIn.UseVisualStyleBackColor = false;
+            this.btnLogIn.Click += new System.EventHandler(this.btnLogIn_Click);
+            // 
+            // lEmail
+            // 
+            this.lEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lEmail.AutoSize = true;
+            this.lEmail.BackColor = System.Drawing.Color.Transparent;
+            this.lEmail.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lEmail.Location = new System.Drawing.Point(27, 35);
+            this.lEmail.Name = "lEmail";
+            this.lEmail.Size = new System.Drawing.Size(64, 23);
+            this.lEmail.TabIndex = 24;
+            this.lEmail.Text = "Email:";
+            // 
+            // lPassword
+            // 
+            this.lPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lPassword.AutoSize = true;
+            this.lPassword.BackColor = System.Drawing.Color.Transparent;
+            this.lPassword.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lPassword.Location = new System.Drawing.Point(27, 73);
+            this.lPassword.Name = "lPassword";
+            this.lPassword.Size = new System.Drawing.Size(104, 23);
+            this.lPassword.TabIndex = 25;
+            this.lPassword.Text = "Password:";
+            // 
+            // gbLogIn
+            // 
+            this.gbLogIn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.gbLogIn.BackColor = System.Drawing.Color.Lavender;
+            this.gbLogIn.Controls.Add(this.tbEmail);
+            this.gbLogIn.Controls.Add(this.btnLogIn);
+            this.gbLogIn.Controls.Add(this.lEmail);
+            this.gbLogIn.Controls.Add(this.lPassword);
+            this.gbLogIn.Controls.Add(this.tbPassword);
+            this.gbLogIn.Location = new System.Drawing.Point(270, 219);
+            this.gbLogIn.Name = "gbLogIn";
+            this.gbLogIn.Size = new System.Drawing.Size(376, 181);
+            this.gbLogIn.TabIndex = 26;
+            this.gbLogIn.TabStop = false;
+            this.gbLogIn.Text = "Log In";
             // 
             // fLogIn
             // 
@@ -90,26 +114,21 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(888, 630);
-            this.Controls.Add(this.btnSubmitHotel);
-            this.Controls.Add(this.pbPassword);
-            this.Controls.Add(this.pbEmail);
-            this.Controls.Add(this.tbPassword);
-            this.Controls.Add(this.tbEmail);
+            this.Controls.Add(this.gbLogIn);
             this.Name = "fLogIn";
             this.Text = "Log in";
-            ((System.ComponentModel.ISupportInitialize)(this.pbPassword)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbEmail)).EndInit();
+            this.gbLogIn.ResumeLayout(false);
+            this.gbLogIn.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pbPassword;
-        private System.Windows.Forms.PictureBox pbEmail;
         private System.Windows.Forms.TextBox tbPassword;
         private System.Windows.Forms.TextBox tbEmail;
-        private System.Windows.Forms.Button btnSubmitHotel;
+        private System.Windows.Forms.Button btnLogIn;
+        private System.Windows.Forms.Label lEmail;
+        private System.Windows.Forms.Label lPassword;
+        private System.Windows.Forms.GroupBox gbLogIn;
     }
 }
