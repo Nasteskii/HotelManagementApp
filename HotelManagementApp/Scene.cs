@@ -128,11 +128,6 @@ namespace HotelManagementApp
             }
         }
 
-        public void Draw(Point hotelNameLabelLocation, Graphics g)
-        {
-           
-        }
-
         public bool HasHotel()
         {
             return hotel != null;

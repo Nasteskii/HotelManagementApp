@@ -55,7 +55,7 @@ namespace HotelManagementApp
             }
             else
             {
-                errorProvider.SetError(tbPassword, "Password should contain minimum 6 characters, at least 1 number and 1 uppercase letter");
+                errorProvider.SetError(tbPassword, "Password should contain minimum 6 characters, at least 2 numbers and 1 uppercase letter");
                 e.Cancel = true;
             }
         }

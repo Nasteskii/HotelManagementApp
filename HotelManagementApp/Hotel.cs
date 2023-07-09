@@ -12,8 +12,6 @@ namespace HotelManagementApp
         private string Name { get; set; }
         private string Location { get; set; }
         private StarsNumber Stars { get; set; }
-        private double Rating { get; set; } = 0;
-
         private List<Room> Rooms;
 
         public Hotel(string name, string location, byte stars) {
