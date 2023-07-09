@@ -29,5 +29,40 @@ namespace HotelManagementApp
             DialogResult = DialogResult.OK;
             Close();
         }
+
+        private void tbEmail_Validating(object sender, CancelEventArgs e)
+        {
+            ErrorProvider errorProvider = new ErrorProvider();
+            if (ValidationUtil.EmailValidation(tbEmail.Text))
+            {
+                errorProvider.SetError(tbEmail, null);
+                e.Cancel = false;
+            }
+            else
+            {
+                errorProvider.SetError(tbEmail, "Enter valid Email");
+                e.Cancel = true;
+            }
+        }
+
+        private void tbPassword_Validating(object sender, CancelEventArgs e)
+        {
+            ErrorProvider errorProvider = new ErrorProvider();
+            if (ValidationUtil.PasswordValidation(tbPassword.Text))
+            {
+                errorProvider.SetError(tbPassword, null);
+                e.Cancel = false;
+            }
+            else
+            {
+                errorProvider.SetError(tbPassword, "Password should contain minimum 6 characters, at least 1 number and 1 uppercase letter");
+                e.Cancel = true;
+            }
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

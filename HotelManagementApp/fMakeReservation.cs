@@ -18,6 +18,7 @@ namespace HotelManagementApp
         public List<Guest> Guests { get; set; }
         public DateTime CheckInDate { get; set; }
         public DateTime CheckOutDate { get; set; }
+        ErrorProvider errorProvider = new ErrorProvider();
 
         public fMakeReservation()
         {
@@ -66,10 +67,12 @@ namespace HotelManagementApp
 
         private void btnMakeReservation_Click(object sender, EventArgs e)
         {
-            UserEmail = tbEmail.Text;
-            UserFirstName = tbFirstName.Text;
-            UserLastName = tbLastName.Text;
-            if (numNumberOfGuests.Value == 1) 
+            UserEmail = tbLastName.Text;
+            UserFirstName = tbEmail.Text;
+            UserLastName = tbFirstName.Text;
+            CheckInDate = dtpCheckIn.Value;
+            CheckOutDate = dtpCheckOut.Value;
+            if (numNumberOfGuests.Value == 1)
             {
                 Guests.Add(new Guest((int)numGuest1Age.Value));
             }
@@ -91,10 +94,15 @@ namespace HotelManagementApp
                 Guests.Add(new Guest((int)numGuest3Age.Value));
                 Guests.Add(new Guest((int)numGuest4Age.Value));
             }
-            CheckInDate = dtpCheckIn.Value;
-            CheckOutDate = dtpCheckOut.Value;
-            DialogResult = DialogResult.OK;
-            Close();
+            if (UserEmail.Trim().Length > 0 && UserFirstName.Length > 0 && UserLastName.Length > 0 && ValidationUtil.DateValidation(CheckInDate, CheckOutDate))
+            {               
+                DialogResult = DialogResult.OK;
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("Enter valid data");
+            }
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -102,6 +110,46 @@ namespace HotelManagementApp
             this.Close();
         }
 
-        
+        private void tbEmail_Validating(object sender, CancelEventArgs e)
+        {
+            if (ValidationUtil.EmailValidation(tbEmail.Text))
+            {
+                errorProvider.SetError(tbEmail, null);
+                e.Cancel = false;
+            }
+            else
+            {
+                errorProvider.SetError(tbEmail, "Enter correct Email");
+                e.Cancel = true;
+            }
+        }
+
+        private void tbFirstName_Validating(object sender, CancelEventArgs e)
+        {
+            if (ValidationUtil.NameValidation(tbFirstName.Text))
+            {
+                errorProvider.SetError(tbFirstName, null);
+                e.Cancel = false;
+            }
+            else
+            {
+                errorProvider.SetError(tbFirstName, "Enter First Name");
+                e.Cancel = true;
+            }
+        }
+
+        private void tbLastName_Validating(object sender, CancelEventArgs e)
+        {
+            if (ValidationUtil.NameValidation(tbLastName.Text))
+            {
+                errorProvider.SetError(tbLastName, null);
+                e.Cancel = false;
+            }
+            else
+            {
+                errorProvider.SetError(tbLastName, "Enter Last Name");
+                e.Cancel = true;
+            }
+        }
     }
 }

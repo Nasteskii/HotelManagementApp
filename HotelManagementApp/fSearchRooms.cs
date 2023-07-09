@@ -38,7 +38,7 @@ namespace HotelManagementApp
 
         private void LoadRooms()
         {
-            if (scene != null)
+            if (scene != null && scene.GetHotel() != null)
             {
                 List<Room> rooms = scene.GetHotel().GetRooms();
                 panel.Controls.Clear();
@@ -165,7 +165,7 @@ namespace HotelManagementApp
                     lNoRooms.BackColor = Color.Transparent;
                     lNoRooms.Font = new Font("Arial", 12);
                     lNoRooms.Location = new Point(10, 40);
-                    lNoRooms.Size = new Size(200, 200);
+                    lNoRooms.Size = new Size(300, 200);
                     panel.Controls.Add(lNoRooms);
                 }
             }
@@ -180,12 +180,37 @@ namespace HotelManagementApp
             DialogResult dialogResult = makeReservation.ShowDialog(this);
             if (dialogResult == DialogResult.OK)
             {
-                scene.MakeReservation(new User(makeReservation.UserEmail, makeReservation.UserFirstName, makeReservation.UserLastName),
-                room.GetNumber(), makeReservation.Guests, makeReservation.CheckInDate, makeReservation.CheckOutDate);
+                if (CheckReservation(makeReservation, room))
+                {
+                    scene.MakeReservation(new User(makeReservation.UserEmail, makeReservation.UserFirstName, makeReservation.UserLastName),
+                        room.GetNumber(), makeReservation.Guests, makeReservation.CheckInDate, makeReservation.CheckOutDate);
+                }
+                else
+                {
+                    MessageBox.Show("There is already reservation in that periot");
+                }
+
             }
             this.LoadRooms();
         }
 
+        private bool CheckReservation(fMakeReservation makeReservation, Room room)
+        {
+            bool status = true;
+            if (scene.GetReservations().Count > 0)
+            {
+                foreach (Reservation reservation in scene.GetReservations())
+                {
+                    if (reservation.GetRoomNumber() == room.GetNumber() && (makeReservation.CheckInDate >= reservation.GetCheckInDate() && makeReservation.CheckInDate <= reservation.GetCheckOutDate() ||
+                        makeReservation.CheckOutDate >= reservation.GetCheckInDate() && makeReservation.CheckOutDate <= reservation.GetCheckOutDate() || makeReservation.CheckInDate < reservation.GetCheckInDate() && makeReservation.CheckOutDate > reservation.GetCheckOutDate()))
+                    {
+                        status = false;
+                        break;
+                    }
+                }
+            }
+            return status;
+        }
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Close();

@@ -35,6 +35,7 @@
             this.lEmail = new System.Windows.Forms.Label();
             this.lPassword = new System.Windows.Forms.Label();
             this.gbLogIn = new System.Windows.Forms.GroupBox();
+            this.btnBack = new System.Windows.Forms.Button();
             this.gbLogIn.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,6 +47,7 @@
             this.tbPassword.PasswordChar = '*';
             this.tbPassword.Size = new System.Drawing.Size(214, 22);
             this.tbPassword.TabIndex = 1;
+            this.tbPassword.Validating += new System.ComponentModel.CancelEventHandler(this.tbPassword_Validating);
             // 
             // tbEmail
             // 
@@ -54,6 +56,7 @@
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(214, 22);
             this.tbEmail.TabIndex = 0;
+            this.tbEmail.Validating += new System.ComponentModel.CancelEventHandler(this.tbEmail_Validating);
             // 
             // btnLogIn
             // 
@@ -108,12 +111,26 @@
             this.gbLogIn.TabStop = false;
             this.gbLogIn.Text = "Log In";
             // 
+            // btnBack
+            // 
+            this.btnBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBack.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.Location = new System.Drawing.Point(51, 530);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(240, 60);
+            this.btnBack.TabIndex = 27;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // fLogIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(888, 630);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.gbLogIn);
             this.Name = "fLogIn";
             this.Text = "Log in";
@@ -130,5 +147,6 @@
         private System.Windows.Forms.Label lEmail;
         private System.Windows.Forms.Label lPassword;
         private System.Windows.Forms.GroupBox gbLogIn;
+        private System.Windows.Forms.Button btnBack;
     }
 }

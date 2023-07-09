@@ -88,9 +88,18 @@ namespace HotelManagementApp
 
         public void NewHotel(string hotelName, string hotelLocation, byte hotelStars)
         {
-            List<Room> rooms = hotel.GetRooms();
+            List<Room> rooms;
+            if (hotel != null)
+            {
+                rooms = hotel.GetRooms();
+            }
+            else
+            {
+                rooms = new List<Room>();
+            }
             hotel = new Hotel(hotelName, hotelLocation, hotelStars);
             hotel.AddRooms(rooms);
+            
 
             using (FileStream fileStream = new FileStream(Path.Combine("..", "..", "Data", "hotel.bin"), FileMode.Create))
             {

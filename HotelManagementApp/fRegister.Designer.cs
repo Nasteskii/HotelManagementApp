@@ -39,6 +39,7 @@
             this.lEmail = new System.Windows.Forms.Label();
             this.lPassword = new System.Windows.Forms.Label();
             this.tbPassword = new System.Windows.Forms.TextBox();
+            this.btnBack = new System.Windows.Forms.Button();
             this.gbRegister.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,6 +82,7 @@
             this.tbLastName.Name = "tbLastName";
             this.tbLastName.Size = new System.Drawing.Size(214, 22);
             this.tbLastName.TabIndex = 1;
+            this.tbLastName.Validating += new System.ComponentModel.CancelEventHandler(this.tbLastName_Validating);
             // 
             // lFirstName
             // 
@@ -101,6 +103,7 @@
             this.tbFirstName.Name = "tbFirstName";
             this.tbFirstName.Size = new System.Drawing.Size(214, 22);
             this.tbFirstName.TabIndex = 0;
+            this.tbFirstName.Validating += new System.ComponentModel.CancelEventHandler(this.tbFirstName_Validating);
             // 
             // tbEmail
             // 
@@ -109,6 +112,7 @@
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(214, 22);
             this.tbEmail.TabIndex = 2;
+            this.tbEmail.Validating += new System.ComponentModel.CancelEventHandler(this.tbEmail_Validating);
             // 
             // btnRegister
             // 
@@ -155,6 +159,20 @@
             this.tbPassword.PasswordChar = '*';
             this.tbPassword.Size = new System.Drawing.Size(214, 22);
             this.tbPassword.TabIndex = 3;
+            this.tbPassword.Validating += new System.ComponentModel.CancelEventHandler(this.tbPassword_Validating);
+            // 
+            // btnBack
+            // 
+            this.btnBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBack.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.Location = new System.Drawing.Point(51, 530);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(240, 60);
+            this.btnBack.TabIndex = 5;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // fRegister
             // 
@@ -162,9 +180,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(901, 618);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.gbRegister);
             this.Name = "fRegister";
-            this.Text = "fRegister";
+            this.Text = "Register";
             this.gbRegister.ResumeLayout(false);
             this.gbRegister.PerformLayout();
             this.ResumeLayout(false);
@@ -183,5 +202,6 @@
         private System.Windows.Forms.Label lEmail;
         private System.Windows.Forms.Label lPassword;
         private System.Windows.Forms.TextBox tbPassword;
+        private System.Windows.Forms.Button btnBack;
     }
 }

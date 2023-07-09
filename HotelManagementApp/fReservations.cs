@@ -78,6 +78,7 @@ namespace HotelManagementApp
                         lCheckInDate.Font = new Font("Arial", 10);
 
                         DateTimePicker dtpCheckInDate = new DateTimePicker();
+                        dtpCheckInDate.Enabled = false;
                         dtpCheckInDate.Value = reservation.GetCheckInDate();
 
                         Label lCheckOutDate = new Label();
@@ -86,6 +87,7 @@ namespace HotelManagementApp
                         lCheckOutDate.Font = new Font("Arial", 10);
 
                         DateTimePicker dtpCheckOutDate = new DateTimePicker();
+                        dtpCheckOutDate.Enabled = false;
                         dtpCheckOutDate.Value = reservation.GetCheckOutDate();
 
                         Button btnRemoveReservation = new Button();

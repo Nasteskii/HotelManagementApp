@@ -114,6 +114,7 @@
     <Compile Include="Scene.cs" />
     <Compile Include="StarsNumber.cs" />
     <Compile Include="User.cs" />
+    <Compile Include="ValidationUtil.cs" />
     <EmbeddedResource Include="fAddRoom.resx">
       <DependentUpon>fAddRoom.cs</DependentUpon>
     </EmbeddedResource>

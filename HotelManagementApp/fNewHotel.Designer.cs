@@ -89,6 +89,7 @@
             this.tbHotelLocation.Name = "tbHotelLocation";
             this.tbHotelLocation.Size = new System.Drawing.Size(211, 22);
             this.tbHotelLocation.TabIndex = 1;
+            this.tbHotelLocation.Validating += new System.ComponentModel.CancelEventHandler(this.tbHotelLocation_Validating);
             // 
             // tbHotelName
             // 
@@ -97,6 +98,7 @@
             this.tbHotelName.Name = "tbHotelName";
             this.tbHotelName.Size = new System.Drawing.Size(211, 22);
             this.tbHotelName.TabIndex = 0;
+            this.tbHotelName.Validating += new System.ComponentModel.CancelEventHandler(this.tbHotelName_Validating);
             // 
             // lHotelLocation
             // 
@@ -142,7 +144,7 @@
             this.btnBack.Location = new System.Drawing.Point(51, 530);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(240, 60);
-            this.btnBack.TabIndex = 29;
+            this.btnBack.TabIndex = 4;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
@@ -156,7 +158,7 @@
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.gbNewHotel);
             this.Name = "fNewHotel";
-            this.Text = "fNewHotel";
+            this.Text = "New Hotel";
             this.gbNewHotel.ResumeLayout(false);
             this.gbNewHotel.PerformLayout();
             this.ResumeLayout(false);

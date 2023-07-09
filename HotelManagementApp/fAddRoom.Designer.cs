@@ -195,7 +195,7 @@
             this.btnBack.Location = new System.Drawing.Point(51, 530);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(240, 60);
-            this.btnBack.TabIndex = 28;
+            this.btnBack.TabIndex = 5;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);

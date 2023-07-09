@@ -85,7 +85,10 @@ namespace HotelManagementApp
             DialogResult dialogResult = logIn.ShowDialog(this);
             if (dialogResult == DialogResult.OK)
             {
-                scene.LogIn(logIn.Email, logIn.Password);
+                if (!scene.LogIn(logIn.Email, logIn.Password))
+                {
+                    MessageBox.Show("Incorrect Email or Password!");
+                }
             }
             this.Form1_Load(sender, e);
         }
@@ -103,14 +106,25 @@ namespace HotelManagementApp
 
         private void btnNewHotel_Click(object sender, EventArgs e)
         {
-            if (scene.HasAdmin() && scene.GetAdmin().IsAuthenticated())
+            if (scene.HasAdmin())
             {
-                fNewHotel newHotel = new fNewHotel();
-                DialogResult dialogResult = newHotel.ShowDialog(this);
-                if (dialogResult == DialogResult.OK)
+                if (scene.GetAdmin().IsAuthenticated())
                 {
-                    scene.NewHotel(newHotel.HotelName, newHotel.HotelLocation, (byte)newHotel.HotelStars);
+                    fNewHotel newHotel = new fNewHotel();
+                    DialogResult dialogResult = newHotel.ShowDialog(this);
+                    if (dialogResult == DialogResult.OK)
+                    {
+                        scene.NewHotel(newHotel.HotelName, newHotel.HotelLocation, (byte)newHotel.HotelStars);
+                    }
                 }
+                else
+                {
+                    MessageBox.Show("Please Log In");
+                }
+            }
+            else
+            {
+                MessageBox.Show("No registered admin!");
             }
             this.Form1_Load(sender, e);
         }
@@ -128,26 +142,53 @@ namespace HotelManagementApp
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            fSearchRooms searchRooms = new fSearchRooms();
-            searchRooms.scene = scene;
-            DialogResult dialogResult = searchRooms.ShowDialog(this);
+            if (scene.GetHotel() != null)
+            {
+                fSearchRooms searchRooms = new fSearchRooms();
+                searchRooms.scene = scene;
+                DialogResult dialogResult = searchRooms.ShowDialog(this);
+            }
+            else 
+            {
+                MessageBox.Show("No hotel!");
+            }
+
         }
 
         private void btnEditHotel_Click(object sender, EventArgs e)
         {
-            if (scene.HasHotel() && scene.HasAdmin() && scene.GetAdmin().IsAuthenticated())
+            if (scene.HasHotel())
             {
-                fNewHotel editHotel = new fNewHotel();
-                editHotel.HotelName = scene.GetHotel().GetName();
-                editHotel.HotelLocation = scene.GetHotel().GetLocation();
-                editHotel.HotelStars = scene.GetHotel().GetStars();
-                editHotel.LoadFields();
-               
-                DialogResult dialogResult = editHotel.ShowDialog(this);
-                if (dialogResult == DialogResult.OK)
+                if (scene.HasAdmin())
                 {
-                    scene.NewHotel(editHotel.HotelName, editHotel.HotelLocation, (byte)editHotel.HotelStars);
+                    if (scene.GetAdmin().IsAuthenticated())
+                    {
+                        fNewHotel editHotel = new fNewHotel();
+                        editHotel.Text = "Edit Hotel";
+                        editHotel.HotelName = scene.GetHotel().GetName();
+                        editHotel.HotelLocation = scene.GetHotel().GetLocation();
+                        editHotel.HotelStars = scene.GetHotel().GetStars();
+                        editHotel.LoadFields();
+
+                        DialogResult dialogResult = editHotel.ShowDialog(this);
+                        if (dialogResult == DialogResult.OK)
+                        {
+                            scene.NewHotel(editHotel.HotelName, editHotel.HotelLocation, (byte)editHotel.HotelStars);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please Log In");
+                    }
                 }
+                else
+                {
+                    MessageBox.Show("No registered admin!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("No hotel!");
             }
             this.Form1_Load(sender, e);
         }
@@ -156,10 +197,29 @@ namespace HotelManagementApp
         {
             if (scene.HasHotel() && scene.HasAdmin() && scene.GetAdmin().IsAuthenticated())
             {
-                fManageRooms manageRooms = new fManageRooms();
-                manageRooms.scene = scene;
+                if (scene.HasAdmin())
+                {
+                    if (scene.GetAdmin().IsAuthenticated())
+                    {
+                        fManageRooms manageRooms = new fManageRooms();
+                        manageRooms.scene = scene;
 
-                DialogResult dialogResult = manageRooms.ShowDialog(this);
+                        DialogResult dialogResult = manageRooms.ShowDialog(this);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please Log In");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No registered admin!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("No hotel!");
+
             }
         }
 
@@ -167,10 +227,29 @@ namespace HotelManagementApp
         {
             if (scene.HasHotel() && scene.HasAdmin() && scene.GetAdmin().IsAuthenticated())
             {
-                fReservations reservations = new fReservations();
-                reservations.scene = scene;
+                if (scene.HasAdmin())
+                {
+                    if (scene.GetAdmin().IsAuthenticated())
+                    {
+                        fReservations reservations = new fReservations();
+                        reservations.scene = scene;
 
-                DialogResult dialogResult = reservations.ShowDialog(this);
+                        DialogResult dialogResult = reservations.ShowDialog(this);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please Log In");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No registered admin!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("No hotel!");
+
             }
         }
     }
