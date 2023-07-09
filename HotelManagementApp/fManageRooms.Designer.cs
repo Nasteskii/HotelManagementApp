@@ -38,7 +38,7 @@
             this.btnAddRoom.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnAddRoom.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAddRoom.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddRoom.Location = new System.Drawing.Point(51, 471);
+            this.btnAddRoom.Location = new System.Drawing.Point(51, 453);
             this.btnAddRoom.Name = "btnAddRoom";
             this.btnAddRoom.Size = new System.Drawing.Size(240, 60);
             this.btnAddRoom.TabIndex = 0;
@@ -51,7 +51,7 @@
             this.btnBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBack.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(51, 546);
+            this.btnBack.Location = new System.Drawing.Point(51, 530);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(240, 60);
             this.btnBack.TabIndex = 1;
@@ -65,7 +65,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(912, 655);
+            this.ClientSize = new System.Drawing.Size(909, 677);
             this.Controls.Add(this.btnAddRoom);
             this.Controls.Add(this.btnBack);
             this.Name = "fManageRooms";

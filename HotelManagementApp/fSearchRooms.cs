@@ -118,8 +118,8 @@ namespace HotelManagementApp
                         lSeaView.Font = new Font("Arial", 10);
 
                         Button btnBookRoom = new Button();
-                        btnBookRoom.Name = "btnDeleteRoom" + room.GetNumber();
-                        btnBookRoom.Text = "Remove";
+                        btnBookRoom.Name = "btnBookRoom" + room.GetNumber();
+                        btnBookRoom.Text = "Book";
                         btnBookRoom.FlatStyle = FlatStyle.Popup;
                         btnBookRoom.Click += btnBookRoom_Click;
                         btnBookRoom.Tag = room;
@@ -176,12 +176,12 @@ namespace HotelManagementApp
             Button button = (Button)sender;
             Room room = (Room)button.Tag;
 
-            fMakeReservation makeReservation = new fAddRoom();
+            fMakeReservation makeReservation = new fMakeReservation();
             DialogResult dialogResult = makeReservation.ShowDialog(this);
             if (dialogResult == DialogResult.OK)
             {
-                scene.MakeReservation(new User(makeReservation.User, makeReservation.firstName, makeReservation.lastName),
-                room.GetNumber(), makeReservation.Guests(), makeReservation.CheckInDate, makeReservation.CheckOutDate);
+                scene.MakeReservation(new User(makeReservation.UserEmail, makeReservation.UserFirstName, makeReservation.UserLastName),
+                room.GetNumber(), makeReservation.Guests, makeReservation.CheckInDate, makeReservation.CheckOutDate);
             }
             this.LoadRooms();
         }

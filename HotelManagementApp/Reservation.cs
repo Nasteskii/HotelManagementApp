@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace HotelManagementApp
 {
+    [Serializable]
     public class Reservation
     {
         private User ReservationUser { get; set; }

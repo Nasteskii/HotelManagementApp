@@ -129,11 +129,8 @@ namespace HotelManagementApp
         private void btnSearch_Click(object sender, EventArgs e)
         {
             fSearchRooms searchRooms = new fSearchRooms();
+            searchRooms.scene = scene;
             DialogResult dialogResult = searchRooms.ShowDialog(this);
-            if (dialogResult == DialogResult.OK)
-            {
-            //    scene.NewHotel(newHotel.HotelName, newHotel.HotelLocation, (byte)newHotel.HotelStars);
-            }
         }
 
         private void btnEditHotel_Click(object sender, EventArgs e)

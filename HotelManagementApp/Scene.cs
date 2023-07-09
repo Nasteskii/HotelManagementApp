@@ -53,7 +53,7 @@ namespace HotelManagementApp
             }
             catch
             {
-
+                reservations = new List<Reservation>();
             }
         }
 

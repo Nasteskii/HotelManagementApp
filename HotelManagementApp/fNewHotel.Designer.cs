@@ -37,6 +37,7 @@
             this.lHotelLocation = new System.Windows.Forms.Label();
             this.lHotelName = new System.Windows.Forms.Label();
             this.lStars = new System.Windows.Forms.Label();
+            this.btnBack = new System.Windows.Forms.Button();
             this.gbNewHotel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -133,12 +134,26 @@
             this.lStars.TabIndex = 24;
             this.lStars.Text = "Stars";
             // 
+            // btnBack
+            // 
+            this.btnBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBack.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.Location = new System.Drawing.Point(51, 530);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(240, 60);
+            this.btnBack.TabIndex = 29;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // fNewHotel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(871, 646);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.gbNewHotel);
             this.Name = "fNewHotel";
             this.Text = "fNewHotel";
@@ -158,5 +173,6 @@
         private System.Windows.Forms.Label lHotelLocation;
         private System.Windows.Forms.Label lHotelName;
         private System.Windows.Forms.Label lStars;
+        private System.Windows.Forms.Button btnBack;
     }
 }
